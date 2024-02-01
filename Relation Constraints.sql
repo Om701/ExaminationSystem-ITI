@@ -2,7 +2,7 @@
 
 -- Relationship between Instructor and Trainning_Manager
 ALTER TABLE instructor ADD CONSTRAINT FK_Trainning_Manager
-	FOREIGN KEY (Training_manager) REFERENCES Instructor(ID)
+	FOREIGN KEY (Training_managerID) REFERENCES Instructor(ID)
 
 -- Relationship between Instructor and Role
 ALTER TABLE instructor ADD CONSTRAINT FK_inst_Roles
@@ -67,6 +67,10 @@ ALTER TABLE StudentExam ADD CONSTRAINT FK_StudentExam_Exam
 -- Relationship between Exam and Question
 ALTER TABLE EXAM ADD CONSTRAINT FK_ExamQuestion
     FOREIGN KEY (QuestionID) REFERENCES question(ID)
+
+-- Relationship between Course and Question
+ALTER TABLE Question ADD CONSTRAINT FK_question_course
+    FOREIGN KEY (CourseID) REFERENCES Course(ID)
 
 -- Relationship between MCQuestion and Question
 ALTER TABLE MCQuestion ADD CONSTRAINT FK_MCQ
